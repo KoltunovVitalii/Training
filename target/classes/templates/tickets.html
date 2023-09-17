@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Tickets</title>
+</head>
+<body>
+<h1>Tickets</h1>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Movie Title</th>
+    <th>Customer Name</th>
+    <th>Actions</th>
+  </tr>
+  <tr th:each="ticket : ${tickets}">
+    <td th:text="${ticket.id}"></td>
+    <td th:text="${ticket.movieTitle}"></td>
+    <td th:text="${ticket.customerName}"></td>
+    <td>
+      <a th:href="@{/tickets/{id}/edit(id=${ticket.id})}">Edit</a>
+      <a th:href="@{/tickets/{id}/delete(id=${ticket.id})}">Delete</a>
+    </td>
+  </tr>
+</table>
+
+<a href="/tickets/new">Add New Ticket</a>
+</body>
+</html>

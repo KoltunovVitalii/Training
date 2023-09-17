@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Edit Ticket</title>
+</head>
+<body>
+<h1>Edit Ticket</h1>
+
+<form th:action="@{/tickets/{id}/edit(id=${ticket.id})}" method="post">
+  <input type="hidden" th:field="*{id}" />
+  <div>
+    <label>Movie Title:</label>
+    <input type="text" th:field="*{movieTitle}" />
+  </div>
+  <div>
+    <label>Customer Name:</label>
+    <input type="text" th:field="*{customerName}" />
+  </div>
+  <div>
+    <button type="submit">Save</button>
+  </div>
+</form>
+
+<a href="/tickets">Back to Tickets</a>
+</body>
+</html>
